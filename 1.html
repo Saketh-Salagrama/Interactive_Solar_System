@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Solar System Simulation
+  </title>
+  <script src="1.js"></script>
+  <script src="2.js"></script>
+  <link rel="stylesheet" type="text/css" href="1.css">
+  <link rel="stylesheet" type="text/css" href="2.css">
+  </head>
+  <Body>
+    <center><h1>Solar System Simulation</h1></center>
+    <div id="main">
+      <div id="sun">
+          <img src="Sun.png" id="sunimg" onclick="planetInfo('sun')">
+          
+      </div>
+      <div id="mercury">
+          <img src="Mercury.png" id="mercuryimg" class="Img" onclick="planetInfo('mercury')">
+      </div>
+      <div id="venus">
+          <img src="venus.png" id="venusimg" class="Img" onclick="planetInfo('venus')">
+      </div>
+      <div id="earth">
+          <img src="earth.png" id="earthimg" class="Img" onclick="planetInfo('earth')">
+      </div>
+      <div id="mars">
+          <img src="Mars.png" id="marsimg" class="Img" onclick="planetInfo('mars')">
+      </div>
+      <div id="jupiter">
+          <img src="jupiter.png" id="jupiterimg" class="Img" onclick="planetInfo('jupiter')">
+      </div>
+      <div id="saturn">
+          <img src="saturn.png" id="saturnimg" class="Img" onclick="planetInfo('saturn')">
+      </div>
+      <div id="uranus">
+          <img src="Uranus.png" id="uranusimg" class="Img" onclick="planetInfo('uranus')">
+      </div>
+       <div id="neptune">
+          <img src="Neptune.png" id="neptuneimg" class="Img" onclick="planetInfo('neptune')">
+      </div>
+    </div>
+    <div id="chat-container">
+        <div id="chat-header">
+      Assistant
+      <button onclick="toggleChat()" style="float: right; background: none; border: none; color: black; font-weight: bold; cursor: pointer; font-size: 16px;">></button>
+    </div>
+        <div id="chat-history">
+            <p class="ai-msg">Ask me about the Missions or planet data</p>   
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="user-input" placeholder="e.g, Explain chandrayaan-3">
+            <button onclick="sendPromptToOllama()">Send</button>
+        </div>
+    </div>
+    <div id="flashcard-container">
+        <div class="cards-wrapper">
+            <div class="flashcard" onclick="playVedio('chandrayaan3_ai.mp4')">Chandrayaan-3</div>
+            <div class="flashcard" onclick="playVedio('mangalyaan.mp4')">Mangalyaan</div>
+            <div class="flashcard" onclick="playVedio('aditya-L1.mp4')">Aditya-L1</div>
+            <div class="flashcard" onclick="playVedio('gaganyaan.mp4')">Gaganyaan</div>
+        </div>
+    </div>
+<div class="pdiv">
+   <p class="planetdetails" id="sund"></p>
+</div>
+
+  </Body>
+</html>

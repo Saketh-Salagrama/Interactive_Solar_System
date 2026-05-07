@@ -1,0 +1,102 @@
+/* --- AI CHATBOX STYLES --- */
+#chat-container {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  width: 320px;
+  height: 550px;
+  background: rgba(10, 20, 40, 0.85);
+  border: 1px solid #00ffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  z-index: 1000;
+  font-family: monospace;
+}
+#chat-header {
+  background: #00ffff;
+  color: black;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+#chat-history {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+.user-msg { color: #00ff00; margin-bottom: 10px; text-align: right; }
+.ai-msg { color: #00ffff; margin-bottom: 10px; text-align: left; border-left: 2px solid #00ffff; padding-left: 8px;}
+#chat-input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #00ffff;
+}
+#user-input {
+  flex-grow: 1;
+  background: black;
+  color: white;
+  border: 1px solid #555;
+  padding: 8px;
+  border-radius: 5px;
+}
+#chat-input-area button {
+  background: #00ffff;
+  color: black;
+  border: none;
+  padding: 8px 15px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+/* --- CHATBOX MINIMIZE STATE --- */
+#chat-container.minimized {
+  height: auto; /* Shrinks the box to just fit the header */
+}
+
+#chat-container.minimized #chat-history,
+#chat-container.minimized #chat-input-area {
+  display: none; /* Completely hides the chat area and input bar */
+}
+
+/* --- FLASHCARDS STYLES --- */
+#flashcard-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  color: #00ffff;
+  font-family: monospace;
+}
+.cards-wrapper {
+  display: flex;
+  gap: 15px;
+}
+.flashcard {
+  background: rgba(0, 50, 100, 0.7);
+  border: 1px solid #00ffff;
+  padding: 15px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+.flashcard:hover { background: #00ffff; color: black; transform: scale(1.05); }
+
+/* --- VIDEO PLAYER MODAL --- */
+#video-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  border: 2px solid #00ffff;
+  padding: 10px;
+  z-index: 2000;
+  box-shadow: 0 0 30px #00ffff;
+}
+#ai-video-player { width: 600px; max-width: 90vw; }
+#close-btn { background: red; color: white; border: none; padding: 5px 10px; margin-bottom: 5px; cursor: pointer; float: right;}

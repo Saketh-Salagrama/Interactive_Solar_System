@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* --- DEEP SPACE BACKGROUND LAYER --- */
+  background-color: #000;
+  background-image: 
+    radial-gradient(ellipse at bottom left, rgba(20, 20, 50, 0.6) 0%, transparent 60%),
+    radial-gradient(ellipse at top right, rgba(40, 10, 40, 0.5) 0%, transparent 60%),
+    linear-gradient(to bottom, #020111 0%, #000000 100%);
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#sun{
+  position:absolute;
+left: 50%;
+top:50%;  
+  width: 150px;
+  height:auto;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+#sunimg{
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: auto;
+  object-fit:none;
+  filter:drop-shadow( 0 0 60px rgba(255, 204, 0, 0.8));
+
+}
+#mercury,#venus,#earth,#mars,#jupiter,#saturn,#uranus,#neptune{
+position: absolute;
+left: 50%;
+top:50%;
+transform: translate(-50%,-50%);
+border-radius: 50%;
+border:  1px solid none;
+animation-name: revolution;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+pointer-events: none;
+
+}
+
+.Img{
+  position: absolute;
+  width: 450px;
+  height: auto;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  pointer-events: auto;
+}
+#mercury{
+  width: 700px;
+  height: 700px;
+  animation-duration: 4s;
+}
+#venus{
+width: 800px;
+height: 800px;
+animation-duration: 8s;
+}
+#earth{
+width:900px;
+height: 900px;
+animation-duration: 12s;
+}
+#mars{
+width:1000px;
+height: 1000px;
+animation-duration: 20s;
+}
+#jupiter{
+width:1100px;
+height: 1100px;
+animation-duration: 50s;
+}
+#saturn{
+width:1200px;
+height: 1200px;
+animation-duration: 85s;
+}
+#uranus{
+width:1300px;
+height: 1300px;
+animation-duration: 120s;
+}
+#neptune{
+width:1400px;
+height: 1400px;
+animation-duration: 160s;
+}
+@keyframes revolution{
+  from{
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to{
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+h1{
+  color: aqua;
+  margin-top: 50px;
+}
+#main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px; /* The exact size of your largest orbit (Neptune) */
+  height: 900px;
+  
+  /* The Magic Trick: This centers the box, then shrinks everything inside it! */
+  transform: translate(-50%, -50%) scale(0.75); 
+}
+/*
+#mercuryimg{
+  position: absolute;
+ 
+  
+  top: 50%;
+  right: 0px;
+  left: 570px;
+  transform: translateY(-50%);
+}
+#venusimg{
+  position: absolute;
+  
+  
+  top: 50%;
+  right:0px;
+  left: 670px;
+  transform: translateY(-50%);
+}
+#earthimg{
+  position: absolute;
+  
+  top: 50%;
+  right: 0px;
+  left: 770px;
+  transform: translateY(-50%);
+}
+#marsimg{
+  position: absolute;
+ ;
+  top: 50%;
+  right:0px;
+  left: 870px;
+  transform: translateY(-50%);
+}
+#jupiterimg{
+  position: absolute;
+
+  top: 50%;
+  right:0px;
+  left: 970px;
+  transform: translateY(-50%);
+}
+#saturnimg{
+  position: absolute;
+ 
+  top: 50%;
+  right:0px;
+  left: 1070px;
+  transform: translateY(-50%);
+}
+#uranusimg{
+  position: absolute;
+
+  top: 50%;
+  right:0px;
+  left: 1170px;
+  transform: translateY(-50%);
+}
+#neptuneimg{
+  position: absolute;
+ 
+  top: 50%;
+  right:0px;
+  left: 1270px;
+  transform: translateY(-50%);
+}
+*/
+.pdiv{
+  border-color: cadetblue;
+  border-radius: 5px;
+}
+.planetdetails {
+  position: fixed;
+  left: 20px;
+  top: 100px;
+  width: 320px;
+  height: auto;
+  background: rgba(10, 20, 40, 0.85);
+  border: 1px solid #00ffff;
+  border-radius: 10px;
+  display: inline-block;
+  flex-direction: column;
+  color: white;
+  z-index: 1000;
+  font-family: monospace;
+}
