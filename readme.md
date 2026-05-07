@@ -1,74 +1,59 @@
-# 🚀 Solar System Simulation — ISRO Interactive Explorer
+# Solar System Simulation
 
-> An interactive solar system simulation powered by a local RAG-ready 
-> LangChain + LLaMA3 backend, themed around ISRO missions and planetary science.
+An interactive solar system I built where you can click on planets to see their
+data and ask an AI assistant about ISRO missions. The AI runs locally using
+LLaMA3 through Ollama — no API keys needed.
 
-## 🌐 Live Demo
-[Click here to view](https://YOURUSERNAME.github.io/solar-system-sim/)
+Live Demo: https://saketh-salagrama.github.io/Interactive_Solar_System/
 
-> ⚠️ Chat assistant requires local setup (see below). 
-> Simulation and planet data work fully on the live link.
+Note: The chat assistant needs local setup to work. The planet simulation
+works directly on the live link.
 
 ---
 
-## 🏗️ Architecture
+Languages: Python, JavaScript
+Frontend: HTML, CSS, JavaScript
+Backend: FastAPI, LangChain, Uvicorn
+AI: LLaMA3 (via Ollama), LangChain PromptTemplate
+Tools: VS Code, Git, Ollama
 
+---
 
-## 🛠️ Tech Stack
+What it does:
+- 8 planets orbiting the sun with different speeds
+- Click any planet to see its physical data and related ISRO mission
+- Chat with an ISRO-themed AI assistant powered by LLaMA3
+- Chat panel can be minimized
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | HTML5, CSS3, Vanilla JS |
-| Animation | CSS Keyframes |
-| AI Framework | LangChain + LCEL Chain |
-| LLM | LLaMA3 via Ollama (local) |
-| Backend API | FastAPI + Uvicorn |
-| Vector Ready | Architecture supports ChromaDB RAG |
+---
 
-## ✨ Features
-- 🪐 8 planets with real relative orbital speed ratios
-- 🤖 ISRO-persona AI assistant (LangChain + LLaMA3)
-- 📋 Click any planet → physical data + ISRO mission info
-- 💬 Minimizable chat panel with Enter key support
+How the AI prompt evolved:
+v1 — Sent raw question directly to Ollama — answers were too generic
+v2 — Added ISRO scientist persona in the prompt — much more focused
+v3 — Used LangChain PromptTemplate — clean and structured output
 
-## ⚙️ Run Locally
+---
 
-### Prerequisites
-```bash
-# Install Ollama
-# Windows: https://ollama.com/download
-# Linux/Mac:
-curl -fsSL https://ollama.com/install.sh | sh
+Run Locally:
 
-# Pull LLaMA3 model (~4.7GB)
-ollama pull llama3
-```
+Install Ollama from https://ollama.com/download, then:
 
-### Setup
-```bash
-# Clone the repo
-git clone https://github.com/YOURUSERNAME/solar-system-sim.git
-cd solar-system-sim
+    ollama pull llama3
 
-# Install Python dependencies
-pip install fastapi uvicorn langchain-ollama langchain-core
+    git clone https://github.com/Saketh-Salagrama/Interactive_Solar_System.git
+    cd Interactive_Solar_System
 
-# Terminal 1 — Start Ollama
-ollama serve
+    pip install fastapi uvicorn langchain-ollama langchain-core
 
-# Terminal 2 — Start FastAPI backend
-uvicorn app:app --port 5000 --reload
+    # Terminal 1
+    ollama serve
 
-# Terminal 3 — Open index.html with Live Server in VS Code
-```
+    # Terminal 2
+    uvicorn app:app --port 5000 --reload
 
-## 🧠 Prompt Engineering
-| Version | Approach | Result |
-|---------|----------|--------|
-| v1 | Raw question to Ollama JS | Generic answers |
-| v2 | ISRO persona system prompt | Domain focused |
-| v3 | LangChain PromptTemplate + LCEL | Structured, production-ready |
+    Then open index.html with Live Server in VS Code
 
-## 👨‍💻 Author
-**Laksh** — B.Tech CSE, 3rd Year  
-GenAI Explorer | LangChain | Local LLM Deployment
+---
+
+Saketh — B.Tech CSE 3rd Year
+Exploring Generative AI, LangChain and local LLM deployment.
