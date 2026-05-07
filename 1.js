@@ -48,17 +48,3 @@ async function sendPromptToOllama() {
     }
   });
 
-  function playVedio(vedioFile){
-    const modal = document.getElementById('vedio-modal');
-    const player = document.getElementById('ai-vedio-player');
-    player.src = vedioFile;
-    modal.style.display = 'block';
-  }
-
-function closevedio(){
-    const modal = document.getElementById('video-modal');
-    const player = document.getElementById('ai-vedio-player');
-    player.pause();
-    player.src = "";
-    modal.style.display = 'none';
-}
