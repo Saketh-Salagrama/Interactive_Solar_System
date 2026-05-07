@@ -14,21 +14,13 @@ async function sendPromptToOllama() {
     chatHistory.scrollTop = chatHistory.scrollHeight;
 
     try{
-        //The process of fetching from the ollama
-        const response = await fetch('http://localhost:11434/api/generate',
-            {
-                method : 'POST',
-                headers:{
-                    'Content-Type': 'application/json'
-                },
-                body:JSON.stringify({
-                    model:'llama3',
-                    prompt: `You are an expert AI Engineer at ISRO. Answer this question accurately and concisely: ${userText}`,
-                    stream: false
-                })
+        const response = await fetch('http://localhost:5000/chat', {
+            method: 'POST',
+            headers: {'Content-Type' : 'application/json'},
+            body : JSON.stringify({message : userText})
 
-            }
-        );
+        });
+
 
         const data = await response.json();
         document.getElementById(typeId).innerHTML = `<strong>Ollama:</strong> ${data.response}`;
