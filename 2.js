@@ -30,5 +30,5 @@ function toggleChat() {
 }
 const planets = ['mercury','venus','earth','mars','jupiter','saturn','uranus','neptune'];
 planets.forEach((planet, i) => {
-    document.getElementById(`${planet}img`).style.left = `${570 + i * 100}px`;
+    document.getElementById(`${planet}img`).style.left = `${670 + i * 100}px`;
 });
